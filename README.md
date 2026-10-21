@@ -3,6 +3,16 @@
 A menu bar app that reads a JBD BMS (Xiaoxiang Electric) over Bluetooth LE and feeds a WidgetKit desktop widget.
 Widgets can't hold a BLE connection themselves, so the app writes `~/Library/Application Support/BMSWidget/snapshot.json` and the widget reads it.
 
+<table>
+  <tr>
+    <td rowspan="2"><img src="docs/menu.webp" width="300" alt="Menu bar panel"></td>
+    <td><img src="docs/widget-medium.png" width="351" alt="Medium widget"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/widget-small.png" width="174" alt="Small widget"></td>
+  </tr>
+</table>
+
 ## Install
 
 Requires macOS 14+ on Apple Silicon.
