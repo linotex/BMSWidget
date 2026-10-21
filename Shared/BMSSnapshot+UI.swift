@@ -20,6 +20,9 @@ extension BMSSnapshot {
         }
     }
 
+    /// Charging right now; a reading left over from before the app quit doesn't count.
+    var showsChargingBolt: Bool { isCharging && disconnected != true }
+
     var temperatureText: String {
         guard !temperatures.isEmpty else { return "—" }
         return temperatures.map { String(format: "%.0f°", $0) }.joined(separator: " / ")

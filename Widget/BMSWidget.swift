@@ -91,9 +91,15 @@ private struct LevelRing: View {
                 Text("\(snapshot.percent)%")
                     .font(.system(.title2, design: .rounded, weight: .bold))
                     .monospacedDigit()
-                Image(systemName: snapshot.batterySymbol)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                if snapshot.showsChargingBolt {
+                    Image(systemName: "bolt.fill")
+                        .font(.title3.weight(.bold))
+                        .foregroundStyle(.green)
+                } else {
+                    Image(systemName: snapshot.batterySymbol)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
         }
     }

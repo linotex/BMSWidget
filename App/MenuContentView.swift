@@ -41,6 +41,12 @@ private struct SnapshotDetails: View {
                 Text("\(snapshot.percent)%")
                     .font(.system(size: 34, weight: .bold, design: .rounded))
                     .foregroundStyle(snapshot.levelColor)
+                if snapshot.showsChargingBolt {
+                    Image(systemName: "bolt.fill")
+                        .font(.system(size: 24, weight: .bold))
+                        .foregroundStyle(.green)
+                        .accessibilityLabel(lang.tr("Заряджається", "Charging"))
+                }
                 Spacer()
                 if let eta = snapshot.etaText(lang) {
                     Text(eta).font(.callout).foregroundStyle(.secondary)

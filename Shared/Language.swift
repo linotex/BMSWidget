@@ -12,7 +12,7 @@ enum Language: String {
 }
 
 private struct LanguageKey: EnvironmentKey {
-    static let defaultValue = Language.uk
+    static let defaultValue = Language.en
 }
 
 extension EnvironmentValues {

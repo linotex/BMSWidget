@@ -13,9 +13,16 @@ Widgets can't hold a BLE connection themselves, so the app writes `~/Library/App
   </tr>
 </table>
 
+While charging:
+
+<img src="docs/charging.webp" width="343" alt="Menu and widget while charging">
+
 ## Install
 
 Requires macOS 14+ on Apple Silicon.
+
+> [!IMPORTANT]
+> The BMS accepts only one Bluetooth connection at a time. Disconnect your phone first: close the Xiaoxiang app or turn off Bluetooth on the phone, otherwise the Mac can't connect.
 
 1. Download `BMSWidget-<version>.zip` from [Releases](https://github.com/linotex/BMSWidget/releases), unzip it and move `BMSWidget.app` to `/Applications`.
 2. The app isn't signed with an Apple certificate, so macOS won't open it until you remove the quarantine flag:
@@ -23,9 +30,9 @@ Requires macOS 14+ on Apple Silicon.
    xattr -cr /Applications/BMSWidget.app
    ```
 3. Launch the app, allow Bluetooth and pick your BMS from the menu bar icon.
-4. Desktop → Edit Widgets → "Battery" ("Акумулятор" while the UI is in Ukrainian).
+4. Desktop → Edit Widgets → "Battery".
 
-The UI language (UA / EN) is switched at the bottom of the menu; Ukrainian is the default.
+The UI language (UA / EN) is switched at the bottom of the menu; English is the default.
 
 ## Build
 
@@ -40,7 +47,6 @@ With Xcode: `brew install xcodegen && xcodegen && open BMSWidget.xcodeproj`, the
 
 ## Notes
 
-- The BMS accepts only **one** BLE connection. While Xiaoxiang is open on your phone, the Mac can't connect.
 - The widget only stays live while the app is running, so add the app to Login Items.
 - The widget refreshes at most about once a minute (WidgetKit limits), the menu every 10 s.
 - Protocol: service `FF00` (`FF01` notify / `FF02` write) or `FFE0`/`FFE1`.

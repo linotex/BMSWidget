@@ -37,7 +37,7 @@ enum SnapshotStore {
     }
 
     static func loadLanguage() -> Language {
-        guard let url = url("language"), let data = try? Data(contentsOf: url) else { return .uk }
-        return Language(rawValue: String(decoding: data, as: UTF8.self)) ?? .uk
+        guard let url = url("language"), let data = try? Data(contentsOf: url) else { return .en }
+        return Language(rawValue: String(decoding: data, as: UTF8.self)) ?? .en
     }
 }
